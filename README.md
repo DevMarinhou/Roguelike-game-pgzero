@@ -45,11 +45,11 @@ Instalação
 3. Certifique-se de que os arquivos de imagem e som estão no diretório correto (veja a seção Assets abaixo).
 4. Execute o jogo:
    ```bash
-   python Lula e o Mito.py
+   python Lula e o mito.py
    ```
    ou, se preferir:
    ```bash
-   pgzrun Lula e o Mito.py
+   pgzrun Lula e o mito.py
    ```
 
 Assets Necessários
