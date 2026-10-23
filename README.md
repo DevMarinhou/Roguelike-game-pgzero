@@ -35,8 +35,8 @@ Instalação
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/devmarinhou/lula-e-mito.git
-   cd lula-e-mito
+   git clone https://github.com/DevMarinhou/Roguelike-game-pgzero
+   cd Roguelike-game-pgzero
    ```
 2. Instale as dependências:
    ```bash
@@ -45,11 +45,11 @@ Instalação
 3. Certifique-se de que os arquivos de imagem e som estão no diretório correto (veja a seção Assets abaixo).
 4. Execute o jogo:
    ```bash
-   python Lula\ e\ Mito.py
+   python Lula e o Mito.py
    ```
    ou, se preferir:
    ```bash
-   pgzrun Lula\ e\ Mito.py
+   pgzrun Lula e o Mito.py
    ```
 
 Assets Necessários
