@@ -35,7 +35,7 @@ Instalação
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/lula-e-mito.git
+   git clone https://github.com/devmarinhou/lula-e-mito.git
    cd lula-e-mito
    ```
 2. Instale as dependências:
