@@ -1,106 +1,74 @@
-Lula e Mito — Vote 13
+# 🎲 Lula e o Mito — Vote 13
 
-Um jogo de ação roguelike com temática política brasileira, desenvolvido em Python com a engine Pygame Zero.
+[![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![Pygame Zero](https://img.shields.io/badge/Pygame%20Zero-FF0000?style=flat-square&logo=pygame&logoColor=white)](https://www.pygamezero.io/)
+[![Gênero](https://img.shields.io/badge/Gênero-Roguelike-c25e00?style=flat-square)](#mecânicas)
 
-Você controla o Lula e precisa enfrentar hordas de Mito (Bolsonaro) em salas cada vez mais difíceis. Ao limpar cada sala, escolhe um boon (benção) para fortalecer seu personagem. O jogo é uma sátira divertida, com visuais vibrantes e mecânicas de dash, ataques em arco e sistema de partículas.
+> ⚠️ **Aviso:** esta é uma **obra de ficção e sátira**, criada como projeto de estudo de game dev. Não representa opinião política de ninguém, não tem vínculo com candidatos, partidos ou campanhas e não pretende desinformar ninguém — é só um jogo. Divirta-se com humor. 🎉
 
-Jogabilidade
+Um **roguelike de ação** em Python com a engine [Pygame Zero](https://www.pygamezero.io/): você controla o Lula e enfrenta hordas de Mito (Bolsonaro) em salas cada vez mais difíceis. Ao limpar cada sala, escolhe um **boon** (benção) para fortalecer seu personagem.
 
-· Movimentação: WASD para andar.
-· Dash: Espaço para dar um dash rápido (com invencibilidade).
-· Ataque: Clique com o botão esquerdo do mouse para atacar na direção do cursor.
-· Objetivo: Elimine todos os inimigos da sala, depois vá até a porta de saída (que brilha) para avançar.
-· Upgrades: Ao limpar uma sala, escolha entre duas benções que aumentam dano, vida, velocidade, alcance ou dash.
-· Game Over: Se a vida do Lula chegar a zero, o jogo acaba. Você pode recomeçar ou voltar ao menu.
+Com visuais vibrantes e "juice" de sobra — dash com invencibilidade, ataque em arco, partículas, tremores de tela e textos "13!" — o jogo é uma sátira divertida feita com muito humor.
 
+## 🎮 Jogabilidade
 
-Mecânicas Principais
+| Controle | Ação |
+|---|---|
+| `W` `A` `S` `D` | Movimentar |
+| `Espaço` | Dash rápido (com invencibilidade) |
+| Clique esquerdo | Atacar na direção do cursor |
+| `1` / `2` (no upgrade) | Escolher a benção correspondente |
+| `Enter` / `Espaço` (no menu) | Iniciar o jogo |
+| `R` (no *Game Over*) | Reiniciar |
+| `M` (no *Game Over*) | Voltar ao menu |
 
-Mecânica Descrição
-Ataque em arco Golpe em cone na direção do mouse.
-Dash Movimento rápido com invencibilidade temporária.
-Sistema de vida Barra de HP com invencibilidade após levar dano.
-Inimigos Cada sala gera inimigos com vida e velocidade crescentes.
-Partículas e Juice Efeitos visuais (sparks, rastros, tremores de tela) para feedback.
-Benções (Boons) Escolha entre dois upgrades aleatórios ao final de cada sala.
+**Objetivo:** elimine todos os inimigos da sala e vá até a **porta de saída** (que brilha) para avançar. Se a vida chegar a zero, o jogo acaba.
 
-Requisitos
+## ⚙️ Mecânicas
 
-· Python 3.7 ou superior
-· Pygame Zero (pgzero)
-· Pygame (instalado automaticamente com pgzero)
+| Mecânica | Descrição |
+|---|---|
+| **Ataque em arco** | Golpe em cone na direção do mouse |
+| **Dash** | Movimento rápido com invencibilidade temporária |
+| **Sistema de vida** | Barra de HP com invencibilidade após levar dano |
+| **Inimigos** | Cada sala gera inimigos com vida e velocidade crescentes |
+| **Partículas e juice** | Sparks, rastros e tremores de tela para feedback |
+| **Benções (boons)** | Dois upgrades aleatórios ao fim de cada sala: dano, vida, velocidade, alcance ou dash |
 
+## 🚀 Requisitos e execução
 
-Instalação
+- **Python 3.7+**
+- **Pygame Zero** (instala o Pygame automaticamente)
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/DevMarinhou/Roguelike-game-pgzero
-   cd Roguelike-game-pgzero
-   ```
-2. Instale as dependências:
-   ```bash
-   pip install pgzero
-   ```
-3. Certifique-se de que os arquivos de imagem e som estão no diretório correto (veja a seção Assets abaixo).
-4. Execute o jogo:
-   ```bash
-   python Lula e o mito.py
-   ```
-   ou, se preferir:
-   ```bash
-   pgzrun Lula e o mito.py
-   ```
+```bash
+git clone https://github.com/DevMarinhou/Roguelike-game-pgzero.git
+cd Roguelike-game-pgzero
+pip install pgzero
+python "Lula e o mito.py"
+# ou: pgzrun "Lula e o mito.py"
+```
 
-Assets Necessários
+## 📁 Estrutura do código
 
-O jogo espera os seguintes arquivos na pasta images/ e sounds/ (ou no mesmo diretório, dependendo da configuração do Pygame Zero):
+```
+├── Lula e o mito.py   # jogo completo (arquivo único, ~32 KB)
+├── images/            # sprites: lula, bolsonaro, fundo da sala, arma
+├── sounds/            # efeitos: ataque, acerto do jogador, acerto do inimigo
+└── README.md
+```
 
-· Imagens:
-  · bg_sala.png — fundo da sala.
-  · lula.png — sprite do jogador (recomendado ~82x84).
-  · bolsonaro.png — sprite do inimigo (recomendado ~72x74).
-  · cane.png — sprite da arma (bengala).
-· Sons (opcional, mas recomendado):
-  · player_hit.wav / .ogg
-  · player_attack.wav
-  · enemy_hit.wav
+**Arquitetura:** `Player` (vida, ataque, dash), `Enemy` (perseguição, dano, knockback), `Particle` (explosões e rastros), `JuiceSystem` (shake de tela e textos) e um loop principal com estados `MENU → PLAYING → UPGRADE → GAME_OVER`.
 
-Se algum arquivo estiver faltando, o jogo usa fallbacks (sem som ou com retângulos coloridos).
+Se algum asset estiver faltando, o jogo usa **fallbacks** (retângulos coloridos e silêncio) — nunca quebra por causa de arquivo ausente.
 
-Dica: Você pode substituir os sprites por seus próprios desenhos, mantendo as proporções aproximadas.
+## 🤝 Contribuir
 
+Issues e pull requests são bem-vindos! Sugestões de novas benções, inimigos ou mecânicas são ótimas.
 
-Controles
+## 📄 Licença
 
-Tecla / Ação Função
-W A S D Movimentar
-Espaço Dash
-Clique esquerdo Atacar na direção do mouse
-1 ou 2 (no menu de upgrade) Escolher a benção correspondente
-R (no Game Over) Recomeçar o jogo
-M (no Game Over) Voltar ao menu principal
-Enter / Espaço (no menu) Iniciar o jogo
+Este é um projeto de **estudo e humor** sem licença formal definida. Créditos: desenvolvimento por [DevMarinhou](https://github.com/DevMarinhou), inspirado na cultura de memes e política brasileira.
 
-Estrutura do Código
+---
 
-· Player: classe do jogador (vida, ataque, dash, animações).
-· Enemy: classe dos inimigos (perseguição, dano, knockback).
-· Particle: sistema de partículas para explosões e rastros.
-· JuiceSystem: gerenciador de shake de tela e textos "13!".
-· Loop principal com estados: MENU, PLAYING, UPGRADE, GAME_OVER.
-
-Contribuição
-
-Sinta-se à vontade para abrir issues ou pull requests. Sugestões de novas benções, inimigos ou mecânicas são bem-vindas!
-
-Licença
-
-Este projeto é distribuído sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
-
-Créditos
-
-· Desenvolvimento: DevMarinhou
-· Inspiração: Cultura de memes e política brasileira (com muito humor).
-
-Divirta-se e Vote 13! 🧃🔥
+*Divirta-se e vote 13! 🧃🔥*
